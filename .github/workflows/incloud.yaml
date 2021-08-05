@@ -67,6 +67,8 @@ jobs:
           unzip xray_linux_amd64.zip
           mv xray_linux_amd64 xray
           set +e ;for i in $(cat output/active_urls.txt ); do ./xray webscan --basic-crawler $i --html-output output/`date +%Y%m%d%H%M%S`.html;done
+          touch 111.html
+          echo no >> 111.html 
           cat output/*.html >> output/xray.html
         shell: bash
       
